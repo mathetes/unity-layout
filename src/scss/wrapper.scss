@@ -1,0 +1,14 @@
+body {
+  font-family: $font-stack;
+  background-color: #e6e6fa;
+  margin-top: 25px;
+  #logo {
+    width: 6rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.container-fluid {
+  width: 960px !important;
+}
