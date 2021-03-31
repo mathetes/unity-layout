@@ -4,17 +4,27 @@
 
 .header {
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.5);
 }
 .slogan-block {
   text-align: center;
   font-size: 1.5rem;
 }
-.slogan {
-  font-size: 2.2rem;
+.slogan {  
   font-weight: 700;
   width: 80%;
   margin: 15px auto 30px;
 }
+
+.slogan-text {
+  font-style: italic;
+  font-size: 1.8rem;
+}
+
+.start-year {
+
+}
+
 .unity-address {
   line-height: 0.1;
 }
