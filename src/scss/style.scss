@@ -1,5 +1,5 @@
-$font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans",
-  "Helvetica Neue", sans-serif;
+$font-stack: -apple-system, BlinkMacSystemFont, "Helvetica-Regular", "Open Sans",
+  sans-serif;
 
 @import "~bootstrap/scss/bootstrap";
 @import "./wrapper";
@@ -16,14 +16,12 @@ $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans",
 // @import "./media768";
 // @import "./media480";
 
-// @font-face {
-//   font-family: "Roboto";
-//   font-style: normal;
-//   font-weight: 400;
-//   src: url(../fonts/Roboto-Regular.ttf);
-// }
+@font-face {
+  font-family: "HoneyScriptCYR-Light";
+  font-style: normal;
+  src: url(../fonts/HoneyScriptCYR-Light.otf);
+}
 * {
   // background-color: #999;
   // border: 1px solid #000;
-  color: #222;
 }

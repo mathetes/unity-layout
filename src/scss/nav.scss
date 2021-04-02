@@ -35,13 +35,13 @@
 
 #menuToggle a {
   text-decoration: none;
-  color: #232323;
+  color: #fff;
 
   transition: color 0.3s ease;
 }
 
 #menuToggle a:hover {
-  color: tomato;
+  // color: yellow;
 }
 
 #menuToggle input {
@@ -137,6 +137,11 @@
 
 #menu li {
   font-size: 22px;
+  padding-left: 10px;
+  &:hover {
+    background: hsla(0, 0%, 100%, 0.5);
+    color: #232323;
+  }
 }
 
 /*
@@ -145,4 +150,9 @@
 #menuToggle input:checked ~ ul {
   transform: none;
   display: block;
+}
+
+.nav-link {
+  // background: hsla(0, 0%, 100%, 0.5);
+  // margin-right: 2px;
 }
