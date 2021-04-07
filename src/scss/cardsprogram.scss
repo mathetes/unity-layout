@@ -7,16 +7,40 @@
 .card-block {
   margin: 20px 0;
 }
-.programs-card-body {
+.step-cover {
   padding: 2rem 6rem;
-  height: 250px;
-  // background-image: url(http://lorempixel.com/454/250/people);
-  // background-repeat: no-repeat;
-  // background-position: center center;
-  // background-attachment: fixed;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-  // opacity: 0.3;
+  height: 303px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.85;
+}
+
+.step1 {
+  background-image: url(../img/step1.jpg);
+}
+
+.step2 {
+  background-image: url(../img/step2.jpg);
+}
+
+.step3 {
+  background-image: url(../img/step3.jpg);
+}
+
+.step4 {
+  background-image: url(../img/step4.jpg);
+}
+
+.programs-card-body {
+  padding: 1rem 0rem;
+  margin: 66% 0 0 0%;
+  color: #fff;
+  font-weight: 900;
+  opacity: 1;
+  background-color: #fff;
+  padding-left: 10px;
+  position: absolute;
+  bottom: -1px;
+  right: -2px;
 }
