@@ -125,31 +125,29 @@ npm install babel-core babel-loader babel-preset-env --save-dev
 После создаем файл настроек `webpack.config.js` с таким содержимым:
 
 ```javascript
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: [
-    './src/js/index.js',
-  ],
+  entry: ["./src/js/index.js"],
   output: {
-    filename: './js/bundle.js'
+    filename: "./js/bundle.js",
   },
   devtool: "source-map",
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'src/js'),
+        include: path.resolve(__dirname, "src/js"),
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: 'env'
-          }
-        }
+            presets: "env",
+          },
+        },
       },
-    ]
+    ],
   },
-  plugins: [
-  ]
+  plugins: [],
 };
 ```
 
@@ -170,12 +168,12 @@ npm install bootstrap jquery popper.js --save
 Теперь можно приступить к написанию нашего `index.js` файла:
 
 ```javascript
-import jQuery from 'jquery';
-import popper from 'popper.js';
-import bootstrap from 'bootstrap';
+import jQuery from "jquery";
+import popper from "popper.js";
+import bootstrap from "bootstrap";
 
-jQuery(function() {
-    jQuery('body').css('color', 'blue');
+jQuery(function () {
+  jQuery("body").css("color", "blue");
 });
 ```
 
@@ -226,12 +224,13 @@ npm install del-cli --save-dev
 CSS файл будем собирать из SCSS файлов, под которые у нас зарезервирована папка `src/scss`. В ней создадим файл `style.scss`, например, со следующим содержимым:
 
 ```scss
-$font-stack: -apple-system, BlinkMacSystemFont,Roboto,'Open Sans','Helvetica Neue',sans-serif;
+$font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans",
+  "Helvetica Neue", sans-serif;
 
 @import "~bootstrap/scss/bootstrap";
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   src: url(../fonts/Roboto-Regular.ttf);
@@ -321,7 +320,7 @@ module.exports = {
 
 И самый спорный момент. Для пакета `css-loader` мы добавили параметр `url`, равный `false`. Зачем? По умолчанию `url=true`, и если Webpack при сборке CSS находит ссылки на внешние файлы: фоновые изображения, шрифты (например, в нашем случае есть ссылка на файл шрифта `url(../fonts/Roboto-Regular.ttf)`), то он эти файлы попросит как-то обработать. Для этого используют чаще всего пакеты `file-loader` (копирует файлы в папку сборки) или `url-loader` (маленькие файлы пытается встроить в HTML код). При этом прописанные относительные пути к файлам в собранном CSS могут быть изменены.
 
-Но с какой проблемой столкнулся на практике. Есть у меня папка `src/scss` с SСSS кодом. Есть папка `src/img` с картинками, на которые ссылаются в SСSS  коде. Всё хорошо. Но, например, мне потребовалось подключить на сайт стороннюю библиотеку (например, lightgallery). SCSS код у неё располагается в папке `node_modules/lightgallery/src/sass`, который ссылается на картинки из папки `node_modules/lightgallery/src/img` через относительные пути. И если добавить стили библиотеки в наш `style.scss`, то `file-loader` будет искать картинки библиотеки `lightgallery` в моей папке `src/img`, а не там, где они находятся. И побороть я это не смог.
+Но с какой проблемой столкнулся на практике. Есть у меня папка `src/scss` с SСSS кодом. Есть папка `src/img` с картинками, на которые ссылаются в SСSS коде. Всё хорошо. Но, например, мне потребовалось подключить на сайт стороннюю библиотеку (например, lightgallery). SCSS код у неё располагается в папке `node_modules/lightgallery/src/sass`, который ссылается на картинки из папки `node_modules/lightgallery/src/img` через относительные пути. И если добавить стили библиотеки в наш `style.scss`, то `file-loader` будет искать картинки библиотеки `lightgallery` в моей папке `src/img`, а не там, где они находятся. И побороть я это не смог.
 
 **Update.** С последней проблемой можно справиться, как подсказал [Odrin](https://habr.com/ru/users/odrin/), с помощью пакета [resolve-url-loader](https://github.com/bholloway/resolve-url-loader) и file-loader.
 
@@ -392,11 +391,8 @@ npm install html-webpack-plugin raw-loader --save-dev
 В качестве шаблонизатора HTML будем использовать шаблонизатор по умолчанию lodash. Вот так будет выглядеть типичная HTML страница до сборки:
 
 ```html
-<% var data = {
-  title: "Заголовок | Проект",
-  author: "Harrix"
-}; %>
-<%= _.template(require('./../includes/header.html'))(data) %>
+<% var data = { title: "Заголовок | Проект", author: "Harrix" }; %> <%=
+_.template(require('./../includes/header.html'))(data) %>
 
 <p>text</p>
 
@@ -408,7 +404,7 @@ npm install html-webpack-plugin raw-loader --save-dev
 **Важное уточнение.** В статьях про сборку HTML страниц через `html-webpack-plugin` обычно подключают встраиваемые шаблоны просто через команду:
 
 ```javascript
-require('html-loader!./../includes/header.html')
+require("html-loader!./../includes/header.html");
 ```
 
 Но при этом в этих встраиваемых шаблонах синтаксис lodash работать не будет (так и не понял, почему так происходит). И данные из переменной `data` туда не передадутся. Поэтому принудительно говорим webpack, что мы встраиваем именно шаблон, который надо обработать как lodash шаблон.
@@ -416,31 +412,37 @@ require('html-loader!./../includes/header.html')
 Теперь мы можем использовать полноценные lodash синтаксис в встраиваемых шаблонах. В коде файла `header.html` ниже через `<%=title%>` печатаем заголовок статьи.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-    <link rel="stylesheet" href="css/style.bundle.css">
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="stylesheet" href="css/style.bundle.css" />
 
     <title><%=title%></title>
   </head>
   <body>
-    <header><img src="img/logo.svg" id="logo"></header>
+    <header><img src="img/logo.svg" id="logo" /></header>
+  </body>
+</html>
 ```
 
 В пакете html-webpack-plugin [есть возможность](https://github.com/jantimon/html-webpack-plugin#generating-multiple-html-files) генерировать несколько HTML страниц:
 
 ```javascript
- plugins: [
-    new HtmlWebpackPlugin(), // Generates default index.html
-    new HtmlWebpackPlugin({  // Also generate a test.html
-      filename: 'test.html',
-      template: 'src/assets/test.html'
-    })
-  ]
+plugins: [
+  new HtmlWebpackPlugin(), // Generates default index.html
+  new HtmlWebpackPlugin({
+    // Also generate a test.html
+    filename: "test.html",
+    template: "src/assets/test.html",
+  }),
+];
 ```
 
 Но прописывать для каждой страницы создание своего экземпляра плагина точно не есть хорошо. Поэтому автоматизируем этот процесс, найдя все HTML файлы в папке `src/html/views` и создадим для них свои версии `new HtmlWebpackPlugin()`.
