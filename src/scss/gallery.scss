@@ -7,17 +7,18 @@
   float: left;
   margin: 5px;
   position: relative;
+  list-style: none;
 }
 .lb-album li > a,
 .lb-album li > a img {
-  display: block;
+  display: flex;
 }
 .lb-album li > a {
   width: 150px;
   height: 150px;
   position: relative;
-  padding: 10px;
-  background: #f1d2c2;
+  // padding: 10px;
+  background: #7e8be4;
   -webkit-box-shadow: 1px 1px 2px #fff,
     1px 1px 2px rgba(158, 111, 86, 0.3) inset;
   -moz-box-shadow: 1px 1px 2px #fff, 1px 1px 2px rgba(158, 111, 86, 0.3) inset;
@@ -31,8 +32,8 @@
   position: absolute;
   width: 150px;
   height: 150px;
-  top: 10px;
-  left: 10px;
+  // top: 10px;
+  // left: 10px;
   text-align: center;
   line-height: 150px;
   color: rgba(27, 54, 81, 0.8);
@@ -41,7 +42,7 @@
   opacity: 0;
   filter: alpha(opacity=0); /* internet explorer */
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
-  background: rgb(241, 210, 194);
+  background: rgb(194, 218, 241);
   background: -moz-radial-gradient(
     center,
     ellipse cover,
@@ -237,11 +238,11 @@
 }
 .lb-prev {
   margin-left: -30px;
-  background: transparent url(../images/arrows.png) no-repeat top left;
+  background: transparent url(/img/arrows.png) no-repeat top left;
 }
 .lb-next {
   margin-left: 6px;
-  background: transparent url(../images/arrows.png) no-repeat top right;
+  background: transparent url(/img/arrows.png) no-repeat top right;
 }
 .lb-overlay:target {
   width: auto;
