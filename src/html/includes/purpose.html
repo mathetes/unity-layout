@@ -1,19 +1,52 @@
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page"  data-toggle="tab" href="#purpose">Цель</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link"  data-toggle="tab" href="#achivements">Преимущества</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link"  data-toggle="tab" href="#entry">О приёме</a>
-  </li>
-</ul>
-
-<div class="purpose-block tab-content">
-  <div class="card tab-pane fade show active" id="purpose">
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button
+      class="nav-link active"
+      id="nav-home-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-home"
+      type="button"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+    >
+      Цель
+    </button>
+    <button
+      class="nav-link"
+      id="nav-profile-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-profile"
+      type="button"
+      role="tab"
+      aria-controls="nav-profile"
+      aria-selected="false"
+    >
+      Достижения
+    </button>
+    <button
+      class="nav-link"
+      id="nav-contact-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-contact"
+      type="button"
+      role="tab"
+      aria-controls="nav-contact"
+      aria-selected="false"
+    >
+      О приеме
+    </button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div
+    class="tab-pane fade show active"
+    id="nav-home"
+    role="tabpanel"
+    aria-labelledby="nav-home-tab"
+  >
     <div class="card-body">
-      <img 
+      <img
         src="img/purpose.jpg"
         class="rounded float-start pics-right"
         alt="Наша цель"
@@ -28,48 +61,56 @@
       </p>
     </div>
   </div>
-
-  <div class="card tab-pane fade" id="achivements">
-    <div class="card-body">
-      <img 
-        src="img/achivements.jpg"
-        class="rounded float-start pics-right"
-        alt="Наша цель"
-      />
-      <h5 class="card-title">Наши достижения</h5>
-      <p class="card-text">
-        <ol>
-          <li>Занятия  проходят в удобное для вас время, два раза в неделю по два академических часа  (1,5 часа) в группах по 5-8 человек. </li>
-          <li>Школа  дает академическое образование по многоуровневой системе согласно принятому  международному стандарту обучения иностранным языкам. </li>
-          <li>Освоение  одного уровня в среднем занимает один учебный год. </li>
-          <li>В  школе работают специалисты высокого класса, выпускники факультета иностранных  языков педагогических университетов нашей страны. </li>
-          <li>Мы  работаем по современным учебникам, разработанным в Великобритании,  издательскими домами Longman и Oxford, 
-            что способствует эффективному усвоению материала.</li>
-          <li>Школа  уделяет больше внимание развитию навыков разговорной  речи, а также чтению, письму, умению слушать и понимать иностранную речь.
-              На уроках используются как аудио, так и видео материалы. </li>
-        </ol>
-      </p>
-    </div>
-  </div>
-
-  <div class="card tab-pane fade" id="entry">
-    <div class="card-body">
-      <img 
-        src="img/entry.jpg"
-        class="rounded float-start pics-right"
-        alt="Наша цель"
-      />
-      <h5 class="card-title">О приеме в языковую школу  «Юнити» учащихся разного возраста</h5>
-      <p class="card-text">
-        <ol>
-          <li>В школу принимаются дети с 6  летнего возраста.</li>
-          <li>Группы формируются в зависимости  от исходного уровня владения языком на основе письменного теста и устного 
-            собеседования и возраста учащихся, учитывая психо-физиологические особенности  каждого возраста. </li>
-          <li>В школе «Юнити» используются  учебные курсы, специально разработанные для каждого конкретного возраста.</li>
-          <li>Все учебные курсы вошли в  «Перечень британских курсов, рекомендуемых МО РФ для использования в школах  и регионах» </li>
-          <li> Занятия начинаются в сентябре и продолжаются до конца  учебного года. </li>
+  <div
+    class="tab-pane fade"
+    id="nav-profile"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+  <div class="card-body">
+    <img 
+      src="img/achivements.jpg"
+      class="rounded float-start pics-right"
+      alt="Наша цель"
+    />
+    <h5 class="card-title">Наши достижения</h5>
+    <p class="card-text">
+      <ol>
+        <li>Занятия  проходят в удобное для вас время, два раза в неделю по два академических часа  (1,5 часа) в группах по 5-8 человек. </li>
+        <li>Школа  дает академическое образование по многоуровневой системе согласно принятому  международному стандарту обучения иностранным языкам. </li>
+        <li>Освоение  одного уровня в среднем занимает один учебный год. </li>
+        <li>В  школе работают специалисты высокого класса, выпускники факультета иностранных  языков педагогических университетов нашей страны. </li>
+        <li>Мы  работаем по современным учебникам, разработанным в Великобритании,  издательскими домами Longman и Oxford, 
+          что способствует эффективному усвоению материала.</li>
+        <li>Школа  уделяет больше внимание развитию навыков разговорной  речи, а также чтению, письму, умению слушать и понимать иностранную речь.
+            На уроках используются как аудио, так и видео материалы. </li>
       </ol>
-      </p>
-    </div>
+    </p>
+  </div>
+  </div>
+  <div
+    class="tab-pane fade"
+    id="nav-contact"
+    role="tabpanel"
+    aria-labelledby="nav-contact-tab"
+  >
+  <div class="card-body">
+    <img 
+      src="img/entry.jpg"
+      class="rounded float-start pics-right"
+      alt="Наша цель"
+    />
+    <h5 class="card-title">О приеме в языковую школу  «Юнити» учащихся разного возраста</h5>
+    <p class="card-text">
+      <ol>
+        <li>В школу принимаются дети с 6  летнего возраста.</li>
+        <li>Группы формируются в зависимости  от исходного уровня владения языком на основе письменного теста и устного 
+          собеседования и возраста учащихся, учитывая психо-физиологические особенности  каждого возраста. </li>
+        <li>В школе «Юнити» используются  учебные курсы, специально разработанные для каждого конкретного возраста.</li>
+        <li>Все учебные курсы вошли в  «Перечень британских курсов, рекомендуемых МО РФ для использования в школах  и регионах» </li>
+        <li> Занятия начинаются в сентябре и продолжаются до конца  учебного года. </li>
+    </ol>
+    </p>
+  </div>
   </div>
 </div>
