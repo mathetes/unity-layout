@@ -1,0 +1,27 @@
+.feedback-img {
+  float: left;
+  width: 100px;
+  border-radius: 50%;
+}
+.feedback-block {
+  display: inline-block;
+  width: 50%;
+  padding: 0 20px;
+}
+
+.feedback-name {
+  background-color: #00128d;
+  line-height: 2;
+  text-align: center;
+  border-radius: 15px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.feedback-position {
+  border-bottom: 3px solid #00128d;
+  width: 70%;
+  direction: rtl;
+  display: flex;
+  text-align: right;
+}
