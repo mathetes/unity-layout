@@ -1,4 +1,35 @@
 .achive_pics {
-  width: 200px;
+  width: 100%;
   height: auto;
+}
+
+.blocks {
+  display:flex;
+  flex-flow:row nowrap;
+}
+
+.block {
+  position:relative;
+  height:auto;
+  max-height:550px;
+  padding: 0 15px;
+  overflow:hidden;
+  margin:20px 0;
+  
+  &:hover .block__body {
+    cursor: pointer;
+    position:absolute;
+    top:0;
+    background:#00128d;
+    color:#fff;
+    height:100%;
+    transition: top .5s;
+    
+    h3 { color: #fff; }
+  }
+}
+
+.block__body {
+  padding:1em;
+  top:100%;
 }
